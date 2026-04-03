@@ -10,6 +10,7 @@ class not_smoke:
         return result
     
     def money(self, saved_money):
+        self.saved_money = saved_money
         days = self.start_date - self.result
         self.saved_money = self.price * days
         return saved_money
