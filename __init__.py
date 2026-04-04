@@ -5,17 +5,21 @@ class not_smoke:
         start_date = datetime.strptime(start_date,"%d/%m/%y")
         self.start_date = start_date
         self.price = price
-
-    def calculate_all(self):
-        self.result = datetime.now() - self.start_date 
-        self.saved_money = self.result.days * self.price 
-    
+    #This func just defines start date
+    def starting_date(self):
+        result = datetime.now() - self.start_date
+        self.result = result
+    #This func just calc how much money I saved
+    def money(self):
+        self.saved_money = self.price * self.result.days
+    #Info method
     def info(self):
-        self.calculate_all()
+        self.starting_date()
+        self.money()
         print(f"Бросил курить: {self.start_date}, сэкономил: {self.saved_money}, не куришь уже: {self.result}")
 
 erbol = not_smoke('3/4/26', 1250)
-print(erbol.info())
+erbol.info()
 
 
     
