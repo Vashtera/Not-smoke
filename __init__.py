@@ -12,6 +12,10 @@ class not_smoke:
     #This func just calc how much money I saved
     def money(self):
         self.saved_money = self.price * self.result.days
+    #This func is restart date, and resets saved money
+    def _restart(self):
+        self.start_date = datetime.now()
+        self.saved_money = 0
     #Info method
     def info(self):
         self.starting_date()
