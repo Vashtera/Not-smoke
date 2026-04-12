@@ -15,7 +15,6 @@ class not_smoke:
     #This func is restart date, and resets saved money
     def _restart(self):
         self.start_date = datetime.now()
-        self.saved_money = 0
     #Info method
     def info(self):
         self.starting_date()
@@ -23,6 +22,7 @@ class not_smoke:
         print(f"Бросил курить: {self.start_date}, сэкономил: {self.saved_money}, не куришь уже: {self.result}")
 
 erbol = not_smoke('3/4/26', 1250)
+erbol._restart
 erbol.info()
 
 
