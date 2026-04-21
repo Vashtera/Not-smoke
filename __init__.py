@@ -6,9 +6,11 @@ class not_smoke:
         self.start_date = start_date
         self.price = price
         with open("start_date.txt", 'w') as start:
-            start.write(start_date)
+            start.write(str(start_date))
     #This func just defines start date
     def starting_date(self):
+        with open("start_date.txt", 'r') as start:
+            
         result = datetime.now() - self.start_date
         self.result = result
     #This func just calc how much money I saved
@@ -17,7 +19,7 @@ class not_smoke:
     #This func is restart date, and resets saved money
     def restart(self):
         with open("start_date.txt", 'w') as start:
-            start.write(datetime.now)
+            start.write(str(datetime.now()))
     #Info method
     def info(self):
         self.starting_date()
@@ -27,8 +29,13 @@ class not_smoke:
 start_date = input("Please enter your starting date(Day/Month/Year): ")
 price_of_cigarettes = int(input("Please enter the price of cigarettes: "))
 erbol = not_smoke(start_date, price_of_cigarettes)
-#erbol.restart
-erbol.info()
+choice = int(input("1 - Инфо, 2 - Сбросить: "))
+if choice == 1:
+    erbol.info()
+elif choice == 2:
+    erbol.restart()
+    erbol.info()
+
 
 
     
