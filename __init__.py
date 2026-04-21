@@ -10,8 +10,8 @@ class not_smoke:
     #This func just defines start date
     def starting_date(self):
         with open("start_date.txt", 'r') as start:
-            
-        result = datetime.now() - self.start_date
+            new_date = start.read()
+        result = datetime.strptime(new_date) - self.start_date
         self.result = result
     #This func just calc how much money I saved
     def money(self):
